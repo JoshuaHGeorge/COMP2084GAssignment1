@@ -7,6 +7,7 @@ namespace COMP2084GAssignment1.Models
 {
     public partial class Event
     {
+        [Key]
         [Column("EventID")]
         public int EventId { get; set; }
         [Column("ClassID")]

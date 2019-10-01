@@ -12,6 +12,7 @@ namespace COMP2084GAssignment1.Models
             Event = new HashSet<Event>();
         }
 
+        [Key]
         [Column("ClassID")]
         public int ClassId { get; set; }
         [Column("Class")]
