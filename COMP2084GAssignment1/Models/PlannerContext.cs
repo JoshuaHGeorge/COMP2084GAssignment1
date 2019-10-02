@@ -23,8 +23,8 @@ namespace COMP2084GAssignment1.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=comp2084g.database.windows.net;Database=Planner;User Id=comp2084g;Password=-0asj3fsc;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer("Server=comp2084g.database.windows.net;Database=Planner;User Id=comp2084g;Password=-0asj3fsc;");
             }
         }
 
