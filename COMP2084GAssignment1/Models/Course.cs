@@ -12,6 +12,7 @@ namespace COMP2084GAssignment1.Models
             Homework = new HashSet<Homework>();
         }
 
+        [Key]
         public int CourseId { get; set; }
         [Column("Course")]
         [StringLength(50)]

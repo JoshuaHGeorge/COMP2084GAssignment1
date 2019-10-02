@@ -7,6 +7,7 @@ namespace COMP2084GAssignment1.Models
 {
     public partial class Homework
     {
+        [Key]
         public int HomeworkId { get; set; }
         public int? CourseId { get; set; }
         public int? AssignmentId { get; set; }
