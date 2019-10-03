@@ -43,7 +43,8 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  /*margin-bottom: 60px;*/
+  margin-bottom: 60px;
+  overflow:scroll;
 }
 .footer {
   position: absolute;
@@ -57,6 +58,8 @@ body {
 
 .calender {
     border-left: 2px solid lightcoral; /*indianred;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .assignment{

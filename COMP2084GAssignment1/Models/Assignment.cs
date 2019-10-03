@@ -12,7 +12,6 @@ namespace COMP2084GAssignment1.Models
             Homework = new HashSet<Homework>();
         }
 
-        [Key]
         public int AssignmentId { get; set; }
         [StringLength(50)]
         public string Name { get; set; }

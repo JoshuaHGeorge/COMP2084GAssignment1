@@ -7,11 +7,10 @@ namespace COMP2084GAssignment1.Models
 {
     public partial class Homework
     {
-        [Key]
         public int HomeworkId { get; set; }
-        public int CourseId { get; set; }
-        public int AssignmentId { get; set; }
-        [Column(TypeName = "date")]
+        public int? CourseId { get; set; }
+        public int? AssignmentId { get; set; }
+        [Column(TypeName = "datetime")]
         public DateTime? Due { get; set; }
         [StringLength(50)]
         public string Description { get; set; }

@@ -34,11 +34,19 @@ namespace COMP2084GAssignment1.Models
 
             modelBuilder.Entity<Assignment>(entity =>
             {
+                entity.Property(e => e.AssignmentId).ValueGeneratedNever();
+
                 entity.Property(e => e.Name).IsUnicode(false);
             });
 
             modelBuilder.Entity<Course>(entity =>
             {
+                entity.HasIndex(e => e.CourseId)
+                    .HasName("IX_Course")
+                    .IsUnique();
+
+                entity.Property(e => e.CourseId).ValueGeneratedNever();
+
                 entity.Property(e => e.Name).IsUnicode(false);
             });
 
@@ -49,7 +57,7 @@ namespace COMP2084GAssignment1.Models
                 entity.HasOne(d => d.Assignment)
                     .WithMany(p => p.Homework)
                     .HasForeignKey(d => d.AssignmentId)
-                    .HasConstraintName("FK_Homework_Assignment");
+                    .HasConstraintName("FK_Homework_Homework");
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Homework)
