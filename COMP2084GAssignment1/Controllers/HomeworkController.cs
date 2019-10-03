@@ -48,8 +48,8 @@ namespace COMP2084GAssignment1.Controllers
         // GET: Homework/Create
         public IActionResult Create()
         {
-            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "AssignmentId");
-            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "CourseId");
+            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "Name");
+            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "Name");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace COMP2084GAssignment1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "AssignmentId", homework.AssignmentId);
-            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "CourseId", homework.CourseId);
+            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "Name", homework.AssignmentId);
+            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "Name", homework.CourseId);
             return View(homework);
         }
 
@@ -84,8 +84,8 @@ namespace COMP2084GAssignment1.Controllers
             {
                 return NotFound();
             }
-            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "AssignmentId", homework.AssignmentId);
-            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "CourseId", homework.CourseId);
+            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "Name", homework.AssignmentId);
+            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "Name", homework.CourseId);
             return View(homework);
         }
 
@@ -121,8 +121,8 @@ namespace COMP2084GAssignment1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "AssignmentId", homework.AssignmentId);
-            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "CourseId", homework.CourseId);
+            ViewData["AssignmentId"] = new SelectList(_context.Assignment, "AssignmentId", "Name", homework.AssignmentId);
+            ViewData["CourseId"] = new SelectList(_context.Course, "CourseId", "Name", homework.CourseId);
             return View(homework);
         }
 
