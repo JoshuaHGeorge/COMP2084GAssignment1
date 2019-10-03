@@ -66,11 +66,11 @@
 </table>
 
 
-<div id="border">
+<div class="calender">
     @foreach (var item in Model)
     {
         String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)}px");
-    <p @hold>
+    <p @hold class="assignment">
 
         @*@(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)
 
