@@ -55,7 +55,7 @@
                     days, 
 
                     and 
-                    @((item.Due.Value.Subtract(DateTime.Now)).Hours)
+                    @((item.Due.Value.Subtract(DateTime.Now)).Hours+3)
                     hours.
                 </td>
 
@@ -71,7 +71,7 @@
     {
         //TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time"));
 
-        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.UtcNow)).Days) * 96) + (((item.Due.Value.Subtract(DateTime.UtcNow)).Hours) * 3)}px");
+        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.UtcNow)).Days) * 96) + (((item.Due.Value.Subtract(DateTime.UtcNow)).Hours+3) * 3)}px");
     <p @hold class="assignment">
 
         @*@(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)
