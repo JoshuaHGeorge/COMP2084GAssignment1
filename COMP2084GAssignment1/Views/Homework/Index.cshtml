@@ -66,12 +66,19 @@
 </table>
 
 
-
+<div id="border">
     @foreach (var item in Model)
     {
-        
-<aside @($"style=\"margin: 0px 0px20px {(((item.Due.Value.Subtract(DateTime.Now)).Days)*100)}px\"") ;>
+        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)}px");
+    <p @hold>
 
-    @(((item.Due.Value.Subtract(DateTime.Now)).Days)*100)
-</aside>
+        @*@(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)
+
+        @($"style=\"margin:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)}px\"")*@
+
+        @Html.DisplayFor(modelItem => item.Description)
+    </p>
     }
+
+</div>
+
