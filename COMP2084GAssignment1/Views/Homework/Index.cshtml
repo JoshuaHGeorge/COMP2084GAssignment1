@@ -69,7 +69,7 @@
 <div class="calender">
     @foreach (var item in Model)
     {
-        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)}px");
+        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 96) + (((item.Due.Value.Subtract(DateTime.Now)).Hours) * 3)}px");
     <p @hold class="assignment">
 
         @*@(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)
