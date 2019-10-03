@@ -29,26 +29,49 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Due)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Assignment.AssignmentId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Course.CourseId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.HomeworkId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.HomeworkId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.HomeworkId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Due)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Assignment.AssignmentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HomeworkId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.HomeworkId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HomeworkId">Delete</a>
+                </td>
+                <td>
+                    Due in
+                    @((item.Due.Value.Subtract(DateTime.Now)).Days)
+                    days, 
+
+                    and 
+                    @((item.Due.Value.Subtract(DateTime.Now)).Hours)
+                    hours.
+                </td>
+
+
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
+    @foreach (var item in Model)
+    {
+        
+<aside @($"style=\"margin: 0px 0px20px {(((item.Due.Value.Subtract(DateTime.Now)).Days)*100)}px\"") ;>
+
+    @(((item.Due.Value.Subtract(DateTime.Now)).Days)*100)
+</aside>
+    }
