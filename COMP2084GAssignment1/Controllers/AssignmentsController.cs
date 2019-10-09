@@ -53,7 +53,7 @@ namespace COMP2084GAssignment1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AssignmentId,Name")] Assignment assignment)
+        public async Task<IActionResult> Create([Bind("Name")] Assignment assignment)
         {
             if (ModelState.IsValid)
             {

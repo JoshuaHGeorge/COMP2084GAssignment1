@@ -34,7 +34,7 @@ namespace COMP2084GAssignment1.Models
 
             modelBuilder.Entity<Assignment>(entity =>
             {
-                entity.Property(e => e.AssignmentId).ValueGeneratedNever();
+                //entity.Property(e => e.AssignmentId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).IsUnicode(false);
             });
@@ -45,7 +45,7 @@ namespace COMP2084GAssignment1.Models
                     .HasName("IX_Course")
                     .IsUnique();
 
-                entity.Property(e => e.CourseId).ValueGeneratedNever();
+                //entity.Property(e => e.CourseId).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).IsUnicode(false);
             });

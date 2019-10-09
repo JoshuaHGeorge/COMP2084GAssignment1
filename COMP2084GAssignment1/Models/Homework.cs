@@ -12,6 +12,7 @@ namespace COMP2084GAssignment1.Models
         public int? CourseId { get; set; }
         public int? AssignmentId { get; set; }
         [Column(TypeName = "datetime")]
+        [Required]
         public DateTime? Due { get; set; }
         [StringLength(50)]
         public string Description { get; set; }

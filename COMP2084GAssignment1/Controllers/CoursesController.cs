@@ -53,7 +53,7 @@ namespace COMP2084GAssignment1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CourseId,Name")] Course course)
+        public async Task<IActionResult> Create([Bind("Name")] Course course)
         {
             if (ModelState.IsValid)
             {
