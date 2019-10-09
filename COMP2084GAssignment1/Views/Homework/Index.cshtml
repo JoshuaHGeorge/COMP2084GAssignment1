@@ -66,7 +66,9 @@
 </table>
 
 
-<div class="calender">
+<div class="calender"
+     
+     >
     @foreach (var item in Model)
     {
         //TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time"));
@@ -78,6 +80,11 @@
 
         @($"style=\"margin:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)}px\"")*@
 
+
+        @Html.DisplayFor(modelItem => item.Course.Name)
+        ,
+        @Html.DisplayFor(modelItem => item.Assignment.Name)
+        , 
         @Html.DisplayFor(modelItem => item.Description)
     </p>
     }
