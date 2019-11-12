@@ -73,7 +73,7 @@
     {
         //TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Korea Standard Time"));
 
-        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.UtcNow)).Days) * 96) + (((item.Due.Value.Subtract(DateTime.UtcNow)).Hours) * 4)}px");
+        String hold = ($"style=margin-left:{(((item.Due.Value.Subtract(DateTime.Now)).Days) * 96) + (((item.Due.Value.Subtract(DateTime.Now)).Hours) * 4)}px");
     <p @hold class="assignment">
 
         @*@(((item.Due.Value.Subtract(DateTime.Now)).Days) * 100)
